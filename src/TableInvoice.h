@@ -57,7 +57,14 @@ typedef struct TableInvoiceRow {
   char _90[61];
   char _91[64];
   char VAT_NUMBER[31];
-  char _92[36];
+  
+  char _92[11];
+
+  double DATE_MODIFIED;
+  double DATE_CREATED;
+  double DATE_3;
+
+  char _93;
 } TableInvoiceRow;
 #pragma pack(pop)
 

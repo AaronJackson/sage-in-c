@@ -8,7 +8,7 @@
 
 int main() {
 
-  set_root("/Volumes/SageData/");
+  set_root("/Volumes/2013/COMPANY.001/ACCDATA/");
 
   printf("Enter an Invoice Number: ");
   int invoice_number;
@@ -25,6 +25,14 @@ int main() {
   printf("Invoice Number: %d\n", invoice->INVOICE_NUMBER);
   printf("  Company Name: %s\n", invoice->COMPANY_NAME);
   printf("       Creator: %s\n", invoice->USERNAME);
+
+  long date1 = mstime_to_unixtime(invoice->DATE_MODIFIED);
+  long date2 = mstime_to_unixtime(invoice->DATE_CREATED);
+  long date3 = mstime_to_unixtime(invoice->DATE_3);
+
+  printf("   Modified On: %s", ctime(&date1));
+  printf("    Created on: %s", ctime(&date2));
+  printf("        Date 3: %s", ctime(&date3));
 
   return 0;
 }

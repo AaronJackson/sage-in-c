@@ -1,6 +1,10 @@
 #ifndef __TABLE_H__
 #define __TABLE_H__
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+
 typedef struct Table {
   FILE *file;
   size_t row_length;
