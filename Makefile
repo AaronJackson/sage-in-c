@@ -3,7 +3,7 @@ DEBUGGER=ggdb
 
 all:
 	mkdir -p build
-	gcc src/*.c demo/*.c -o build/main
+	gcc src/*.c demo/*.c -o build/main -Wall
 
 debug:
 	mkdir -p build
@@ -12,3 +12,4 @@ debug:
 
 clean:
 	rm -rf build/*
+	

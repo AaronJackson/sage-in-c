@@ -31,13 +31,14 @@ int main() {
   long date3 = mstime_to_unixtime(invoice->DATE_PROCESSED);
 
   printf("   Modified On: %s", ctime(&date1));
-  printf("    Created on: %s", ctime(&date2));
-  printf("Date Processed: %s", ctime(&date3));
+  printf("    Created On: %s", ctime(&date2));
+  printf("  Processed On: %s", ctime(&date3));
 
   printf("       Printed: %s\n", (invoice->IS_PRINTED ? "Yes" : "No"));
   printf("       Emailed: %s\n", (invoice->IS_EMAILED ? "Yes" : "No"));
   printf("        Posted: %s\n", (invoice->IS_POSTED  ? "Yes" : "No"));
 
+  free(invoice);
 
 
   return 0;

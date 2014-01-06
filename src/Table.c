@@ -18,12 +18,15 @@ Table* table_open(const char *filename, size_t row_length) {
 
   t->row_length = row_length;
   t->file = fopen(path, "rb");
+
+  free(path);
   
   return t;
 }
 
 void table_close(Table *t) {
   fclose(t->file);
+  free(t);
 }
 
 void* table_read_next_row(Table *t) {
@@ -31,6 +34,6 @@ void* table_read_next_row(Table *t) {
   
   char *d = malloc(t->row_length);
   fread(d, 1, t->row_length, t->file);
+
   return d;
 }
-
