@@ -8,7 +8,8 @@
 
 int main() {
 
-  set_root("/Volumes/2013/COMPANY.001/ACCDATA/");
+  // set_root("/Volumes/2013/COMPANY.001/ACCDATA/");
+  set_root("/Volumes/SageData/");
 
   printf("Enter an Invoice Number: ");
   int invoice_number;
@@ -16,6 +17,7 @@ int main() {
 
   TableInvoiceRow *invoice = find_invoice_by_number(invoice_number);
   if (invoice == NULL) {
+    printf("\nSize of TableInvoiceRow %lu\n\n", sizeof(TableInvoiceRow));
     printf("Could not find an Invoice with that number.\n");
     return 0;
   }
