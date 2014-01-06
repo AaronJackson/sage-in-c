@@ -3,4 +3,6 @@
 
 long mstime_to_unixtime(double mstime);
 
+long daysepoch_to_unixtime(int epoch);
+
 #endif

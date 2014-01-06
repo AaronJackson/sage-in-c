@@ -32,6 +32,9 @@ int main() {
   printf("  Company Name: %s\n", invoice->COMPANY_NAME);
   printf("       Creator: %s\n", invoice->USERNAME);
 
+  long date = daysepoch_to_unixtime(invoice->INVOICE_DATE);
+  printf("  Invoice Date: %s\n", ctime(&date));
+
   long date1 = mstime_to_unixtime(invoice->DATE_MODIFIED);
   long date2 = mstime_to_unixtime(invoice->DATE_CREATED);
   long date3 = mstime_to_unixtime(invoice->DATE_PROCESSED);
@@ -46,7 +49,7 @@ int main() {
 
   free(invoice);
 
-  printf("| PRODUCT CODE                   | DESCRIPTION                                                  | Q |\n");
+  printf("\n| PRODUCT CODE                   | DESCRIPTION                                                  | Q |\n");
   find_invoice_items(invoice->INVOICE_NUMBER, &invoice_item_found);
 
   return 0;

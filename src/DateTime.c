@@ -9,3 +9,7 @@ long mstime_to_unixtime(double d) {
 
   return unix_time;
 }
+
+long daysepoch_to_unixtime(int epoch) {
+  return epoch * 86400;
+}
