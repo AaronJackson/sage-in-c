@@ -10,14 +10,19 @@ void set_root(char* r) {
 }
 
 Table* table_open(const char *filename, size_t row_length) {
-  char *path = malloc(200);
-  strcat(path, root);
+  char *path = malloc(strlen(root)+strlen(filename)+1);
+  strcpy(path, root);
   strcat(path, filename);
 
   Table *t = malloc(sizeof(Table));
 
   t->row_length = row_length;
   t->file = fopen(path, "rb");
+
+  if (t->file == NULL) {
+    printf("Failed to open %s", path);
+    exit(0);
+  }
 
   free(path);
   
