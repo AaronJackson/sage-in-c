@@ -5,6 +5,12 @@
 
 #include "../src/SageAccounts50.h"
 
+void invoice_item_found(TableInvoiceItemRow *item) {
+  printf("| %s | %s | %.00f |\n", 
+    item->STOCK_CODE, 
+    item->DESCRIPTION,
+    item->QUANTITY);
+}
 
 int main() {
 
@@ -40,6 +46,8 @@ int main() {
 
   free(invoice);
 
+  printf("| PRODUCT CODE                   | DESCRIPTION                                                  | Q |\n");
+  find_invoice_items(invoice->INVOICE_NUMBER, &invoice_item_found);
 
   return 0;
 }

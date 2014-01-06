@@ -7,7 +7,7 @@ all:
 
 debug:
 	mkdir -p build
-	gcc src/*.c demo/*.c -o build/main -g 
+	gcc src/*.c demo/*.c -o build/main -Wall -g 
 	$(DEBUGGER) ./build/main
 
 clean:
