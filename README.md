@@ -14,12 +14,18 @@ mkdir -p build
 gcc src/*.c demo/*.c -o build/main
 
 $ ./build/main
-Enter an Invoice Number: 10756
-You entered: 10756
+Enter an Invoice Number: 8900
+You entered: 8900
 
-Invoice Number: 10756
-  Company Name: A RANDOM COMPANY 
-       Creator: tom   
+Invoice Number: 8900
+  Company Name: Customer Name                                               
+       Creator: MANAGER                                                     
+   Modified On: Mon Jan  6 00:26:35 2014
+    Created on: Sun Jan  5 20:08:54 2014
+Date Processed: Mon Jan  6 00:26:35 2014
+       Printed: No
+       Emailed: Yes
+        Posted: No
 ```
 
 ## Further Work!
