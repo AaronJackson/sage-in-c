@@ -55,7 +55,7 @@ typedef struct TableInvoiceRow {
   /* Offset 1341 */ double CARRIAGE_NET;
   /* Offset 1349 */ double CARRIAGE_TAX;
   /* Offset 1357 */ char _u_2[8];
-  /* Offset 1365 */ short INVOICE_DATE // Days since 31/12/1969
+  /* Offset 1365 */ short INVOICE_DATE; // Days since 31/12/1969
   /* Offset 1367 */ int SETTLEMENT_DUE_DAYS;
   /* Offset 1371 */ short CARRIAGE_TAX_CODE;
   /* Offset 1373 */ short CARRIAGE_DEPARTMENT;

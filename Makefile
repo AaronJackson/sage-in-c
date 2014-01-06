@@ -12,4 +12,3 @@ debug:
 
 clean:
 	rm -rf build/*
-	
