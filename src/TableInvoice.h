@@ -94,6 +94,7 @@ typedef struct TableInvoiceRow {
 } TableInvoiceRow;
 #pragma pack(pop)
 
+void sage_find_invoices(void (*callback)(TableInvoiceRow*));
 TableInvoiceRow* sage_find_invoice_by_number(int invoice_number);
 
 #endif
