@@ -15,13 +15,13 @@ void invoice_item_found(TableInvoiceItemRow *item) {
 int main() {
 
   // set_root("/Volumes/2013/COMPANY.001/ACCDATA/");
-  set_root("/Volumes/SageData/");
+  sage_set_root("/Volumes/SageData/");
 
   printf("Enter an Invoice Number: ");
   int invoice_number;
   scanf("%d", &invoice_number);
 
-  TableInvoiceRow *invoice = find_invoice_by_number(invoice_number);
+  TableInvoiceRow *invoice = sage_find_invoice_by_number(invoice_number);
   if (invoice == NULL) {
     printf("\nSize of TableInvoiceRow %lu\n\n", sizeof(TableInvoiceRow));
     printf("Could not find an Invoice with that number.\n");
@@ -47,10 +47,11 @@ int main() {
   printf("       Emailed: %s\n", (invoice->IS_EMAILED ? "Yes" : "No"));
   printf("        Posted: %s\n", (invoice->IS_POSTED  ? "Yes" : "No"));
 
-  free(invoice);
-
+  
   printf("\n| PRODUCT CODE                   | DESCRIPTION                                                  | Q |\n");
-  find_invoice_items(invoice->INVOICE_NUMBER, &invoice_item_found);
+  sage_find_invoice_items(invoice->INVOICE_NUMBER, &invoice_item_found);
 
+  free(invoice);
+  
   return 0;
 }

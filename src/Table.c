@@ -5,11 +5,11 @@
 
 #include "Table.h"
 
-void set_root(char* r) {
+void sage_set_root(char* r) {
   root = r;
 }
 
-Table* table_open(const char *filename, size_t row_length) {
+Table* sage_table_open(const char *filename, size_t row_length) {
   char *path = malloc(strlen(root)+strlen(filename)+1);
   strcpy(path, root);
   strcat(path, filename);
@@ -29,12 +29,12 @@ Table* table_open(const char *filename, size_t row_length) {
   return t;
 }
 
-void table_close(Table *t) {
+void sage_table_close(Table *t) {
   fclose(t->file);
   free(t);
 }
 
-void* table_read_next_row(Table *t) {
+void* sage_table_read_next_row(Table *t) {
   if (feof(t->file)) return NULL;
   
   char *d = malloc(t->row_length);

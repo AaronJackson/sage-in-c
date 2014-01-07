@@ -94,6 +94,6 @@ typedef struct TableInvoiceRow {
 } TableInvoiceRow;
 #pragma pack(pop)
 
-TableInvoiceRow* find_invoice_by_number(int invoice_number);
+TableInvoiceRow* sage_find_invoice_by_number(int invoice_number);
 
 #endif

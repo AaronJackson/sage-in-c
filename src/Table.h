@@ -12,19 +12,19 @@ typedef struct Table {
 } Table;
 
 char *root;
-void set_root(char* r);
+void sage_set_root(char* r);
 
 /**
  * @brief Opens the table
  * 
  * @param filename The path to the file, e.g. ../INVOICE.DTA
  */
-Table* table_open(const char *filename, size_t row_length);
+Table* sage_table_open(const char *filename, size_t row_length);
 
 /**
  * @brief Closes the table
  */
-void table_close(Table *t);
+void sage_table_close(Table *t);
 
 /**
  * @brief Returns a byte array of one row 
@@ -35,7 +35,7 @@ void table_close(Table *t);
  * @param rowLength The length of a single row in this table
  * @return Pointer to the byte array
  */
-void* table_read_next_row(Table *t);
+void* sage_table_read_next_row(Table *t);
 
 /**
  * @brief [brief description]
@@ -44,6 +44,6 @@ void* table_read_next_row(Table *t);
  * @param t [description]
  * @return [description]
  */
-void* table_find_row(Table *t);
+void* sage_table_find_row(Table *t);
 
 #endif
