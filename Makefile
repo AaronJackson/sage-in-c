@@ -1,14 +1,7 @@
-DEBUGGER=ggdb
-
-
-all:
+demos:
 	mkdir -p build
-	gcc src/*.c demo/*.c -o build/main -Wall
-
-debug:
-	mkdir -p build
-	gcc src/*.c demo/*.c -o build/main -Wall -g 
-	$(DEBUGGER) ./build/main
+	gcc demo/main.c src/*.c -o build/main -Wall
+	gcc demo/invoice_list.c src/*.c -o build/invoice_list -Wall
 
 clean:
 	rm -rf build/*
